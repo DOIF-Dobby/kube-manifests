@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-front-app
+  labels:
+    app: kube-front-app
+spec:
+  replicas: 2 # 파드 복제본 수
+  selector:
+    matchLabels:
+      app: kube-front-app
+  template:
+    metadata:
+      labels:
+        app: kube-front-app
+    spec:
+      containers:
+        - name: kube-front-app
+          image: kimmyungjin/kube-front-app:latest # 도커허브 이미지
+          ports:
+            - containerPort: 3000 # 컨테이너가 사용하는 포트
+          env:
+            - name: BACKEND_API_HOST
+              value: "http://kube-spring-app-service" # 백엔드 서비스 주소
