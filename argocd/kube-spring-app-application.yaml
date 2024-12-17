@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kube-spring-app                 # ArgoCD 애플리케이션 이름
+  namespace: argocd                     # ArgoCD가 설치된 네임스페이스
+spec:
+  project: default                      # ArgoCD 프로젝트 (기본값)
+  source:
+    repoURL: 'https://github.com/kimmyungjin/kube-manifests'  # Git 레포지토리 URL
+    targetRevision: HEAD                # 사용할 Git 브랜치 (HEAD = 최신 브랜치)
+    path: manifests/kube-spring-app     # Git 레포지토리 내 manifests 경로
+  destination:
+    server: 'https://kubernetes.default.svc'  # 배포할 클러스터 (ArgoCD 클러스터 내부)
+    namespace: default                  # 배포할 Kubernetes 네임스페이스
+  syncPolicy:                           # 자동 동기화 설정
+    automated:
+      selfHeal: true                    # 클러스터 상태를 자동으로 수정
+      prune: true                       # Git에서 삭제된 리소스를 클러스터에서도 삭제
