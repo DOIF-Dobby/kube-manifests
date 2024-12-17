@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default                      # ArgoCD 프로젝트 (기본값)
   source:
-    repoURL: 'https://github.com/kimmyungjin/kube-manifests'  # Git 레포지토리 URL
+    repoURL: 'https://github.com/DOIF-Dobby/kube-manifests'  # Git 레포지토리 URL
     targetRevision: HEAD                # 사용할 Git 브랜치 (HEAD = 최신 브랜치)
     path: manifests/kube-spring-app     # Git 레포지토리 내 manifests 경로
   destination:
