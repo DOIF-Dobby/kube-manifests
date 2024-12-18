@@ -6,6 +6,7 @@ metadata:
     app: kube-spring-app
 spec:
   replicas: 2 # 생성할 Pod의 복제본 수
+  revisionHistoryLimit: 3 # 레플리카셋 관리를 위한 리비전 기록 수
   selector:
     matchLabels:
       app: kube-spring-app
