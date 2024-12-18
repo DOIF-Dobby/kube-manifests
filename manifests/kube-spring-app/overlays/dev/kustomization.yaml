@@ -13,4 +13,4 @@ patches:
 images:
 - name: kimmyungjin/kube-spring-app
   newName: kimmyungjin/kube-spring-app
-  newTag: "4"
+  newTag: "5"
