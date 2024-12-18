@@ -22,5 +22,3 @@ spec:
         duration: 10s                                       # 최초 재시도 간격
         factor: 2                                           # 이후 2배씩 증가
         maxDuration: 3m                                     # 최대 재시도 대기 시간
-    rollback:
-      enabled: true                                       # 동기화 실패 시 롤백
