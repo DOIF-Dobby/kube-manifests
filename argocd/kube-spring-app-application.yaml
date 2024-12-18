@@ -8,7 +8,9 @@ spec:
   source:
     repoURL: 'https://github.com/DOIF-Dobby/kube-manifests'
     targetRevision: main
-    path: manifests/kube-spring-app
+    path: manifests/kube-spring-app/overlays/dev
+    kustomize:
+      namePrefix: ""
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
