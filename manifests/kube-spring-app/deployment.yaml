@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: kube-spring-app
-          image: kimmyungjin/kube-spring-app:3 # 사용하고자 하는 이미지
+          image: kimmyungjin/kube-spring-app:4 # 사용하고자 하는 이미지
           ports:
             - containerPort: 8080 # 컨테이너가 사용하는 포트
